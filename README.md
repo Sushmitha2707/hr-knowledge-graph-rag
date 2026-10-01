@@ -1,3 +1,4 @@
+> **Status:** working prototype. `data/` contains synthetic sample data for demonstration only. Evaluation on a real labelled set is in progress.
 # HR Knowledge Graph + RAG
 
 Ground candidate-to-job matching in an **ontology and knowledge graph** instead of keyword overlap alone.
@@ -45,7 +46,3 @@ They are a smoke test only, so **do not report results from them**. For a real r
 3. Extend the skills in `ontology/hr_ontology.ttl` to cover your data.
 4. Run `python evaluate.py` and report P@3/MRR for the real set, including the sample size and the fact that labels are manual.
 
-## Limitations (say these in interviews)
-- Skill extraction is dictionary matching; an NER or LLM extractor would generalise better.
-- Hybrid weights (0.5/0.5) and hierarchy weights (1.0/0.7/0.4/0.3) are hand-set, not tuned.
-- Small evaluation set; results show a trend, not statistical significance.
