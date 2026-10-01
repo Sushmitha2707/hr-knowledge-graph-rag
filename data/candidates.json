@@ -1,0 +1,14 @@
+[
+ {"id":"C1","name":"Aanya R","text":"Built a knowledge graph in Neo4j and queried it with Cypher; designed an OWL ontology for product data. Python, SQL, embeddings stored in FAISS for retrieval."},
+ {"id":"C2","name":"Bhavana S","text":"Implemented a RAG pipeline with LangChain and a Chroma vector database for document question answering using LLMs. Python and SQL."},
+ {"id":"C3","name":"Chirag M","text":"Trained transformer models in PyTorch for text classification; deployed on GCP with Docker and CI/CD. Scikit-learn baselines."},
+ {"id":"C4","name":"Divya K","text":"Data analyst: dashboards in Power BI and Tableau, SQL reporting, Pandas data cleaning."},
+ {"id":"C5","name":"Eshan P","text":"Built REST APIs with FastAPI and SQL databases, containerised with Docker, Git workflows."},
+ {"id":"C6","name":"Farah T","text":"Fine-tuned LLMs and built semantic search with embeddings; Python, TensorFlow deep learning; AWS deployment."},
+ {"id":"C7","name":"Gautam N","text":"Wrote SPARQL queries over an RDF triple store, modelled data with SKOS taxonomies and OWL; Python scripting."},
+ {"id":"C8","name":"Harini V","text":"Django and Flask web apps, MySQL schema design, RESTful services."},
+ {"id":"C9","name":"Imran A","text":"Excel and Tableau reporting, SQL queries, Python Pandas analysis."},
+ {"id":"C10","name":"Jaya L","text":"Java backend developer with Spring; Kubernetes and Docker on Azure."},
+ {"id":"C11","name":"Kiran D","text":"Computer vision with PyTorch and OpenCV, deep learning for image classification; GCP."},
+ {"id":"C12","name":"Lata G","text":"Marketing coordinator: social media campaigns, copywriting, event planning."}
+]

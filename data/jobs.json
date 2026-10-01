@@ -1,0 +1,6 @@
+[
+ {"id":"J1","title":"Data and Applied Scientist","employer":"Acme Enterprise Software","text":"Build ontologies and knowledge graphs, RAG pipelines, embeddings and vector databases to ground AI agents. Query with SPARQL or Cypher. Python and SQL required."},
+ {"id":"J2","title":"ML Engineer","employer":"Vision Labs","text":"Train and deploy deep learning models with PyTorch or TensorFlow. Docker and GCP experience. Strong machine learning fundamentals."},
+ {"id":"J3","title":"Data Analyst","employer":"RetailCo","text":"Build dashboards in Power BI, write SQL queries, analyse data with Python and Pandas, and present reporting to stakeholders."},
+ {"id":"J4","title":"Backend Python Developer","employer":"PayFlow","text":"Develop REST APIs with Python and FastAPI, design SQL schemas, containerise services with Docker."}
+]
