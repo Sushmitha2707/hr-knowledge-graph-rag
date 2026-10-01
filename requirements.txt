@@ -1,0 +1,6 @@
+rdflib>=7.0
+scikit-learn>=1.3
+numpy
+sentence-transformers>=2.7   # embeddings (downloads all-MiniLM-L6-v2 on first run)
+faiss-cpu                    # vector index (falls back to numpy if missing)
+google-genai                 # optional: Gemini for the RAG explanation step
