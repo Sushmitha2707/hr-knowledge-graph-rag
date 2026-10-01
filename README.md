@@ -1,5 +1,6 @@
-> **Status:** working prototype. `data/` contains synthetic sample data for demonstration only. Evaluation on a real labelled set is in progress.
 # HR Knowledge Graph + RAG
+
+> **Status:** working prototype. `data/` contains synthetic sample data for demonstration only. Evaluation on a real labelled set is in progress.
 
 Ground candidate-to-job matching in an **ontology and knowledge graph** instead of keyword overlap alone.
 Extends my TF-IDF resume screener (`AI_Resume_Screening_Bot`) with a semantic layer.
@@ -46,3 +47,7 @@ They are a smoke test only, so **do not report results from them**. For a real r
 3. Extend the skills in `ontology/hr_ontology.ttl` to cover your data.
 4. Run `python evaluate.py` and report P@3/MRR for the real set, including the sample size and the fact that labels are manual.
 
+## Limitations
+- Skill extraction is dictionary matching; an NER or LLM-based extractor would generalise better.
+- Hybrid weights (0.5/0.5) and hierarchy weights (1.0/0.7/0.4/0.3) are hand-set, not tuned.
+- The evaluation set is small and labels are manual, so results show a trend, not statistical significance.
