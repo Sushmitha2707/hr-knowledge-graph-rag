@@ -1,0 +1,178 @@
+@prefix hr: <http://example.org/hr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ---- Schema -------------------------------------------------------------
+hr:Candidate a owl:Class ; rdfs:label "Candidate" .
+hr:Job       a owl:Class ; rdfs:label "Job" .
+hr:Employer  a owl:Class ; rdfs:label "Employer" .
+hr:Skill     a owl:Class ; rdfs:subClassOf skos:Concept ; rdfs:label "Skill" .
+
+hr:hasSkill      a owl:ObjectProperty ; rdfs:domain hr:Candidate ; rdfs:range hr:Skill .
+hr:requiresSkill a owl:ObjectProperty ; rdfs:domain hr:Job ; rdfs:range hr:Skill .
+hr:postedBy      a owl:ObjectProperty ; rdfs:domain hr:Job ; rdfs:range hr:Employer .
+hr:name          a owl:DatatypeProperty ; rdfs:range xsd:string .
+hr:resumeText    a owl:DatatypeProperty ; rdfs:domain hr:Candidate ; rdfs:range xsd:string .
+hr:description   a owl:DatatypeProperty ; rdfs:domain hr:Job ; rdfs:range xsd:string .
+
+# ---- Skills taxonomy (skos:broader = "is a kind of / part of") ---------
+
+hr:Programming a hr:Skill ; skos:prefLabel "Programming" ;
+    skos:altLabel "programming" .
+
+hr:Python a hr:Skill ; skos:prefLabel "Python" ;
+    skos:broader hr:Programming .
+
+hr:Java a hr:Skill ; skos:prefLabel "Java" ;
+    skos:broader hr:Programming .
+
+hr:SQL a hr:Skill ; skos:prefLabel "SQL" ;
+    skos:altLabel "MySQL" ;
+    skos:broader hr:Programming .
+
+hr:MachineLearning a hr:Skill ; skos:prefLabel "machine learning" ;
+    skos:altLabel "ML" .
+
+hr:DeepLearning a hr:Skill ; skos:prefLabel "deep learning" ;
+    skos:broader hr:MachineLearning .
+
+hr:ScikitLearn a hr:Skill ; skos:prefLabel "Scikit-learn" ;
+    skos:altLabel "scikit-learn" ;
+    skos:broader hr:MachineLearning .
+
+hr:NLP a hr:Skill ; skos:prefLabel "NLP" ;
+    skos:altLabel "natural language processing" ;
+    skos:broader hr:MachineLearning .
+
+hr:PyTorch a hr:Skill ; skos:prefLabel "PyTorch" ;
+    skos:broader hr:DeepLearning .
+
+hr:TensorFlow a hr:Skill ; skos:prefLabel "TensorFlow" ;
+    skos:broader hr:DeepLearning .
+
+hr:Transformers a hr:Skill ; skos:prefLabel "transformer" ;
+    skos:altLabel "transformers" ;
+    skos:broader hr:DeepLearning .
+
+hr:ComputerVision a hr:Skill ; skos:prefLabel "computer vision" ;
+    skos:altLabel "OpenCV" ;
+    skos:broader hr:DeepLearning .
+
+hr:GenerativeAI a hr:Skill ; skos:prefLabel "generative AI" ;
+    skos:altLabel "GenAI" .
+
+hr:LLM a hr:Skill ; skos:prefLabel "LLM" ;
+    skos:altLabel "LLMs" ;
+    skos:altLabel "large language model" ;
+    skos:broader hr:GenerativeAI .
+
+hr:RAG a hr:Skill ; skos:prefLabel "RAG" ;
+    skos:altLabel "retrieval-augmented generation" ;
+    skos:broader hr:GenerativeAI .
+
+hr:Embeddings a hr:Skill ; skos:prefLabel "embeddings" ;
+    skos:altLabel "embedding" ;
+    skos:broader hr:GenerativeAI .
+
+hr:VectorDatabase a hr:Skill ; skos:prefLabel "vector database" ;
+    skos:altLabel "vector databases" ;
+    skos:altLabel "vector store" ;
+    skos:broader hr:GenerativeAI .
+
+hr:FAISS a hr:Skill ; skos:prefLabel "FAISS" ;
+    skos:broader hr:VectorDatabase .
+
+hr:Chroma a hr:Skill ; skos:prefLabel "Chroma" ;
+    skos:broader hr:VectorDatabase .
+
+hr:LangChain a hr:Skill ; skos:prefLabel "LangChain" ;
+    skos:broader hr:GenerativeAI .
+
+hr:KnowledgeRepresentation a hr:Skill ; skos:prefLabel "knowledge representation" .
+
+hr:Ontology a hr:Skill ; skos:prefLabel "ontology" ;
+    skos:altLabel "ontologies" ;
+    skos:broader hr:KnowledgeRepresentation .
+
+hr:RDF a hr:Skill ; skos:prefLabel "RDF" ;
+    skos:altLabel "triple store" ;
+    skos:broader hr:KnowledgeRepresentation .
+
+hr:OWL a hr:Skill ; skos:prefLabel "OWL" ;
+    skos:broader hr:KnowledgeRepresentation .
+
+hr:SKOS a hr:Skill ; skos:prefLabel "SKOS" ;
+    skos:broader hr:KnowledgeRepresentation .
+
+hr:GraphTechnology a hr:Skill ; skos:prefLabel "graph technology" .
+
+hr:KnowledgeGraph a hr:Skill ; skos:prefLabel "knowledge graph" ;
+    skos:altLabel "knowledge graphs" ;
+    skos:broader hr:GraphTechnology .
+
+hr:GraphDatabase a hr:Skill ; skos:prefLabel "graph database" ;
+    skos:altLabel "graph databases" ;
+    skos:broader hr:GraphTechnology .
+
+hr:Neo4j a hr:Skill ; skos:prefLabel "Neo4j" ;
+    skos:broader hr:GraphDatabase .
+
+hr:GraphQueryLanguage a hr:Skill ; skos:prefLabel "graph query language" ;
+    skos:broader hr:GraphTechnology .
+
+hr:SPARQL a hr:Skill ; skos:prefLabel "SPARQL" ;
+    skos:broader hr:GraphQueryLanguage .
+
+hr:Cypher a hr:Skill ; skos:prefLabel "Cypher" ;
+    skos:broader hr:GraphQueryLanguage .
+
+hr:Cloud a hr:Skill ; skos:prefLabel "cloud" .
+
+hr:GCP a hr:Skill ; skos:prefLabel "GCP" ;
+    skos:altLabel "Google Cloud" ;
+    skos:broader hr:Cloud .
+
+hr:AWS a hr:Skill ; skos:prefLabel "AWS" ;
+    skos:broader hr:Cloud .
+
+hr:Azure a hr:Skill ; skos:prefLabel "Azure" ;
+    skos:broader hr:Cloud .
+
+hr:DevOps a hr:Skill ; skos:prefLabel "DevOps" .
+
+hr:Docker a hr:Skill ; skos:prefLabel "Docker" ;
+    skos:broader hr:DevOps .
+
+hr:Kubernetes a hr:Skill ; skos:prefLabel "Kubernetes" ;
+    skos:broader hr:DevOps .
+
+hr:CICD a hr:Skill ; skos:prefLabel "CI/CD" ;
+    skos:broader hr:DevOps .
+
+hr:WebDevelopment a hr:Skill ; skos:prefLabel "web development" .
+
+hr:FastAPI a hr:Skill ; skos:prefLabel "FastAPI" ;
+    skos:broader hr:WebDevelopment .
+
+hr:Flask a hr:Skill ; skos:prefLabel "Flask" ;
+    skos:broader hr:WebDevelopment .
+
+hr:Django a hr:Skill ; skos:prefLabel "Django" ;
+    skos:broader hr:WebDevelopment .
+
+hr:REST a hr:Skill ; skos:prefLabel "REST" ;
+    skos:altLabel "RESTful" ;
+    skos:broader hr:WebDevelopment .
+
+hr:Analytics a hr:Skill ; skos:prefLabel "analytics" .
+
+hr:PowerBI a hr:Skill ; skos:prefLabel "Power BI" ;
+    skos:broader hr:Analytics .
+
+hr:Tableau a hr:Skill ; skos:prefLabel "Tableau" ;
+    skos:broader hr:Analytics .
+
+hr:Pandas a hr:Skill ; skos:prefLabel "Pandas" ;
+    skos:broader hr:Analytics .
